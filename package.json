@@ -1,0 +1,69 @@
+{
+  "name": "ai-ide-assistant",
+  "displayName": "AI IDE Assistant",
+  "description": "AI-powered IDE assistant for dependency and configuration management",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.86.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:aiIdeAssistant.openDashboard",
+    "onCommand:aiIdeAssistant.scanProject"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "aiIdeAssistant.openDashboard",
+        "title": "AI Assistant: Open Dashboard"
+      },
+      {
+        "command": "aiIdeAssistant.scanProject",
+        "title": "AI Assistant: Scan Project"
+      }
+    ],
+    "configuration": {
+      "title": "AI IDE Assistant",
+      "properties": {
+        "aiIdeAssistant.openAiKey": {
+          "type": "string",
+          "default": "",
+          "description": "OpenAI API Key"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run build",
+    "build": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "lint": "eslint .",
+    "dev": "vite",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "lucide-react": "^0.344.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-markdown": "^9.0.1",
+    "react-syntax-highlighter": "^15.5.0",
+    "vscode-webview-api": "^1.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.24",
+    "@types/react": "^18.3.5",
+    "@types/react-dom": "^18.3.0",
+    "@types/react-syntax-highlighter": "^15.5.11",
+    "@types/vscode": "^1.86.0",
+    "@vitejs/plugin-react": "^4.3.1",
+    "autoprefixer": "^10.4.18",
+    "eslint": "^9.9.1",
+    "postcss": "^8.4.35",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5.5.3",
+    "vite": "^5.4.2"
+  }
+}
